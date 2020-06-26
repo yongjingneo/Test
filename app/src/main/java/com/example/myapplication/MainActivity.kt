@@ -2,7 +2,7 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-private string a;
+private string b;
 
 class MainActivity : AppCompatActivity() {
 
