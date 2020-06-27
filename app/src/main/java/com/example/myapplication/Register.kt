@@ -26,7 +26,8 @@ class Register : AppCompatActivity() {
             finish()
         }
     }
-    fun registerUser(){
+
+    private fun registerUser(){
         if(txtEmail.text.toString().isEmpty()){
             txtEmail.error = "Please enter email"
             txtEmail.requestFocus()
@@ -39,13 +40,13 @@ class Register : AppCompatActivity() {
             return
         }
 
-        if(txtPassword.text.toString().isEmpty()){
-            txtPassword.error = "Please enter password"
-            txtPassword.requestFocus()
+        if(txtRegPassword.text.toString().isEmpty()){
+            txtRegPassword.error = "Please enter password"
+            txtRegPassword.requestFocus()
             return
         }
 
-        auth.createUserWithEmailAndPassword(txtEmail.text.toString(), txtPassword.text.toString())
+        auth.createUserWithEmailAndPassword(txtEmail.text.toString(), txtRegPassword.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     startActivity(Intent(this,Login::class.java))
