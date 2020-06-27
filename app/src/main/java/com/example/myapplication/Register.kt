@@ -20,17 +20,22 @@ class Register : AppCompatActivity() {
         btnReg.setOnClickListener {
             registerUser()
         }
+
+        txtLogin.setOnClickListener {
+            startActivity(Intent(this,Login::class.java))
+            finish()
+        }
     }
     fun registerUser(){
-        if(txtEmailReg.text.toString().isEmpty()){
-            txtEmailReg.error = "Please enter email"
-            txtEmailReg.requestFocus()
+        if(txtEmail.text.toString().isEmpty()){
+            txtEmail.error = "Please enter email"
+            txtEmail.requestFocus()
             return
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(txtEmailReg.text.toString()).matches()){
-            txtEmailReg.error = "Please enter valid email"
-            txtEmailReg.requestFocus()
+        if(!Patterns.EMAIL_ADDRESS.matcher(txtEmail.text.toString()).matches()){
+            txtEmail.error = "Please enter valid email"
+            txtEmail.requestFocus()
             return
         }
 
@@ -40,7 +45,7 @@ class Register : AppCompatActivity() {
             return
         }
 
-        auth.createUserWithEmailAndPassword(txtEmailReg.text.toString(), txtPassword.text.toString())
+        auth.createUserWithEmailAndPassword(txtEmail.text.toString(), txtPassword.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     startActivity(Intent(this,Login::class.java))
