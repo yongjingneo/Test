@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="ViewMenu">View Menu</string>
+    <string name="SweetSour"><![CDATA[Sweet & Sour]]></string>
+    <string name="Curry">Curry</string>
+    <string name="KamHeong">Kam Heong</string>
+    <string name="Steam">Steam</string>
+    <string name="Sambal">Sambal</string>
+    <string name="Chilli">Chilli</string>
+    <string name="Onion">Onion</string>
+    <string name="SaltedEgg">Salted Egg</string>
 </resources>
