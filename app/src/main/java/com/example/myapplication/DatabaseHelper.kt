@@ -8,18 +8,17 @@ import android.database.sqlite.SQLiteOpenHelper
 
 
 
-val dbname = "mealdb"
-val col_name="name"
-val col_price="price"
-val col_quantity="quantity"
+val dbname = "ratingdb"
+val col_rating="rating"
+val col_review="review"
+
 
 
 class DatabaseHelper(context: Context):SQLiteOpenHelper(context, dbname,null,1){
     override fun onCreate(p0: SQLiteDatabase?) {
-        p0?.execSQL("create table meal(id integer primary key autoincrement,"+
-                col_name + "varchar(30)"+
-                col_price + "varchar(100)"+
-                col_quantity + "varchar(20)")
+        p0?.execSQL("create table rating(id integer primary key autoincrement,"+
+                col_rating + "varchar(5)"+
+                col_review + "varchar(100)")
     }
 
 
@@ -29,30 +28,28 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context, dbname,null,1){
 
     val allData : Cursor
         get() {val db = this.writableDatabase
-            return db.rawQuery("Select * from meal",null)
+            return db.rawQuery("Select * from rating",null)
         }
 
-    fun insertMealData(name:String, price: String, quantity:String){
+    fun insertMealData(rating:String, review: String){
         val db: SQLiteDatabase = writableDatabase
         val values: ContentValues = ContentValues()
-        values.put("name",name)
-        values.put("price",price)
-        values.put("quantity",quantity)
+        values.put("rating",rating)
+        values.put("review",review)
 
-
-        db.insert("meal",null,values)
+        db.insert("rating",null,values)
         db.close()
     }
 
 
-    fun updateMealData(id:String, name: String, price: String, quantity: String):Boolean{
+    /*fun updateMealData(id:String, name: String, price: String, quantity: String):Boolean {
         val db: SQLiteDatabase = writableDatabase
         val values: ContentValues = ContentValues()
-        values.put("name",name)
-        values.put("price",price)
-        values.put("quantity",quantity)
+        values.put("name", name)
+        values.put("price", price)*/
 
-        val result =db.update("meal",values,"id = ?", arrayOf(id))
+
+        /*val result =db.update("meal",values,"id = ?", arrayOf(id))
 
         return if(result>0) {
             true
@@ -79,6 +76,6 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context, dbname,null,1){
 
         cursor.close()
         return true
-    }
+    }*/
 
 }

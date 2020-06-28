@@ -9,4 +9,5 @@
     <string name="Chilli">Chilli</string>
     <string name="Onion">Onion</string>
     <string name="SaltedEgg">Salted Egg</string>
+    <string name="Please">Please Select a Rating From 1 to 5:</string>
 </resources>

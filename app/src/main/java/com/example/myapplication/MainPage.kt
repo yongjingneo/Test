@@ -26,5 +26,12 @@ class MainPage : AppCompatActivity() {
             startActivity(Intent(this,MealOrdering::class.java))
             finish()
         }
+
+        btnRating.setOnClickListener{
+            startActivity(Intent(this,Rating::class.java))
+            finish()
+        }
+
+
     }
 }
