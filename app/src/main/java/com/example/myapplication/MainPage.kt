@@ -25,5 +25,9 @@ class MainPage : AppCompatActivity() {
             startActivity(Intent(this,Profile::class.java))
             //finish()
         }
+
+        btnReserveTable.setOnClickListener {
+            startActivity(Intent(this, ReserveTable::class.java))
+        }
     }
 }
