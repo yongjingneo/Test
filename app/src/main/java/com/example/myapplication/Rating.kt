@@ -2,33 +2,28 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_rating.*
+import com.google.firebase.database.FirebaseDatabase
 
 class Rating : AppCompatActivity() {
 
-    //lateinit var handler: DatabaseHelper
+    lateinit var editTextName:EditText
+    lateinit var ratingBar:RatingBar
+    lateinit var btnSave:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rating)
 
-        //handler = DatabaseHelper(this)
-
-        val rate = findViewById<View>(R.id.ratingBar) as RatingBar
+        /*val rate = findViewById<View>(R.id.ratingBar) as RatingBar
         val submit = findViewById<View>(R.id.btnRate) as Button
 
         submit.setOnClickListener(View.OnClickListener {
             Toast.makeText(this,"Your rating: "+rate.rating.toString(),Toast.LENGTH_LONG).show()
-            /*handler.insertMealData(
-                rate.rating.toString(),
-                review.text.toString()
-            )*/
-            //Toast.makeText(this, "Registered successfully", Toast.LENGTH_SHORT).show()
+
             val builder = AlertDialog.Builder(this)
 
             builder.setTitle("Exit")
@@ -48,6 +43,33 @@ class Rating : AppCompatActivity() {
 
             val dialog:AlertDialog = builder.create()
             dialog.show()
-        })
+        })*/
+
+        editTextName = findViewById(R.id.editTextName)
+        ratingBar = findViewById(R.id.ratingBar)
+        btnSave = findViewById(R.id.btnSave)
+
+        btnSave.setOnClickListener{
+            saveRating()
+        }
+    }
+
+    private fun saveRating(){
+        val name = editTextName.text.toString().trim()
+
+        if(name.isEmpty()){
+            editTextName.error="Please enter a review"
+            return
+        }
+
+        val ref = FirebaseDatabase.getInstance().getReference("reviews")
+        val heroId = ref.push().key
+
+        val review = Review(heroId,name, ratingBar.numStars)
+
+        ref.child(heroId.toString()).setValue(review).addOnCompleteListener{
+            Toast.makeText(applicationContext, "Reviews saved successfully.", Toast.LENGTH_LONG).show()
+        }
+
     }
 }
