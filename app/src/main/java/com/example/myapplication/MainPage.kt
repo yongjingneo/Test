@@ -20,5 +20,10 @@ class MainPage : AppCompatActivity() {
             startActivity(Intent(this, Login::class.java))
             finish()
         }
+
+        btnProfile.setOnClickListener {
+            startActivity(Intent(this,Profile::class.java))
+            //finish()
+        }
     }
 }
