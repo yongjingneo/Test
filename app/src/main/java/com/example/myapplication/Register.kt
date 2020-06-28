@@ -49,8 +49,14 @@ class Register : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(txtEmail.text.toString(), txtRegPassword.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(this,Login::class.java))
-                    finish()
+                    val user = auth.currentUser
+                    user!!.sendEmailVerification()
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                startActivity(Intent(this,Login::class.java))
+                                finish()
+                            }
+                        }
                 } else {
                     Toast.makeText(baseContext, "Register failed.",
                         Toast.LENGTH_SHORT).show()
