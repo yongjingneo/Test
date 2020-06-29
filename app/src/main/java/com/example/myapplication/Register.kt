@@ -46,6 +46,12 @@ class Register : AppCompatActivity() {
             return
         }
 
+        if(txtRegPassword.text.toString().length<6){
+            txtRegPassword.error = "Password must be at least 6 characters."
+            txtRegPassword.requestFocus()
+            return
+        }
+
         auth.createUserWithEmailAndPassword(txtRegEmail.text.toString(), txtRegPassword.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -58,8 +64,8 @@ class Register : AppCompatActivity() {
                             }
                         }
                 } else {
-                    Toast.makeText(baseContext, "Register failed.",
-                        Toast.LENGTH_SHORT).show()
+                    //txtRegEmail.error = "Email already registered."
+                    Toast.makeText(applicationContext, "Email already registered.", Toast.LENGTH_SHORT).show()
                 }
             }
     }
