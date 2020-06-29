@@ -28,15 +28,15 @@ class Register : AppCompatActivity() {
     }
 
     private fun registerUser(){
-        if(txtEmail.text.toString().isEmpty()){
-            txtEmail.error = "Please enter email"
-            txtEmail.requestFocus()
+        if(txtRegEmail.text.toString().isEmpty()){
+            txtRegEmail.error = "Please enter email"
+            txtRegEmail.requestFocus()
             return
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(txtEmail.text.toString()).matches()){
-            txtEmail.error = "Please enter valid email"
-            txtEmail.requestFocus()
+        if(!Patterns.EMAIL_ADDRESS.matcher(txtRegEmail.text.toString()).matches()){
+            txtRegEmail.error = "Please enter valid email"
+            txtRegEmail.requestFocus()
             return
         }
 
@@ -46,7 +46,13 @@ class Register : AppCompatActivity() {
             return
         }
 
-        auth.createUserWithEmailAndPassword(txtEmail.text.toString(), txtRegPassword.text.toString())
+        if(txtRegPassword.text.toString().length<6){
+            txtRegPassword.error = "Password must be at least 6 characters."
+            txtRegPassword.requestFocus()
+            return
+        }
+
+        auth.createUserWithEmailAndPassword(txtRegEmail.text.toString(), txtRegPassword.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
@@ -58,8 +64,8 @@ class Register : AppCompatActivity() {
                             }
                         }
                 } else {
-                    Toast.makeText(baseContext, "Register failed.",
-                        Toast.LENGTH_SHORT).show()
+                    //txtRegEmail.error = "Email already registered."
+                    Toast.makeText(applicationContext, "Email already registered.", Toast.LENGTH_SHORT).show()
                 }
             }
     }

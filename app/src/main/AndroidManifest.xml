@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".roomConfirm"></activity>
+        <activity android:name=".roomSelectDate" />
+        <activity android:name=".roomSelectTime" />
+        <activity android:name=".confirmTable" />
+        <activity android:name=".tableSelectTime" />
+        <activity android:name=".tableSelectDate" />
+        <activity android:name=".Profile" />
         <activity android:name=".Rating"></activity>
         <activity android:name=".MealOrdering" />
         <activity android:name=".ChangePassword" />

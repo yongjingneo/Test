@@ -22,6 +22,19 @@ class MainPage : AppCompatActivity() {
             finish()
         }
 
+        btnProfile.setOnClickListener {
+            startActivity(Intent(this,Profile::class.java))
+            //finish()
+        }
+
+        btnReserveTable.setOnClickListener {
+            startActivity(Intent(this, tableSelectDate::class.java))
+        }
+
+        btnReserveRoom.setOnClickListener {
+            startActivity(Intent(this, roomSelectDate::class.java))
+        }
+
         btnMealOrdering.setOnClickListener{
             startActivity(Intent(this,MealOrdering::class.java))
             finish()
@@ -31,7 +44,6 @@ class MainPage : AppCompatActivity() {
             startActivity(Intent(this,Rating::class.java))
             finish()
         }
-
 
     }
 }
