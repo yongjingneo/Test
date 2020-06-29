@@ -3,6 +3,8 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.myapplication.reserveRoom.roomSelectDate
+import com.example.myapplication.reserveTable.tableSelectDate
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main_page.*
 
@@ -27,7 +29,11 @@ class MainPage : AppCompatActivity() {
         }
 
         btnReserveTable.setOnClickListener {
-            startActivity(Intent(this, ReserveTable::class.java))
+            startActivity(Intent(this, tableSelectDate::class.java))
+        }
+
+        btnReserveRoom.setOnClickListener {
+            startActivity(Intent(this, roomSelectDate::class.java))
         }
     }
 }
