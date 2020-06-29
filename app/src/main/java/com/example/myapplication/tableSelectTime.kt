@@ -1,11 +1,9 @@
-package com.example.myapplication.reserveTable
+package com.example.myapplication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Spinner
-import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_table_select_time.*
 
 class tableSelectTime : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.myapplication
 
 import com.google.firebase.database.Exclude
 import java.util.*

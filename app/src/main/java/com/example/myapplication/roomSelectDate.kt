@@ -1,9 +1,8 @@
-package com.example.myapplication.reserveRoom
+package com.example.myapplication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_room_select_date.*
 
 class roomSelectDate : AppCompatActivity() {
