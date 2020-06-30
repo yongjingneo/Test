@@ -36,13 +36,13 @@ class MainPage : AppCompatActivity() {
         }
 
         btnMealOrdering.setOnClickListener{
-            startActivity(Intent(this,MealOrdering::class.java))
-            finish()
+            startActivity(Intent(this,ViewMenu::class.java))
+
         }
 
         btnRating.setOnClickListener{
-            startActivity(Intent(this,Rating::class.java))
-            finish()
+            startActivity(Intent(this@MainPage,Rating::class.java))
+
         }
 
     }

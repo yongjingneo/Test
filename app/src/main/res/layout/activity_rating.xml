@@ -15,6 +15,8 @@
             android:id="@+id/txtRating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/Please"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -22,22 +24,34 @@
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="230px" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="80dp"
+            android:max="5"
+            android:stepSize="1" />
+
+        <TextView
+            android:id="@+id/txtReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/PleaseReview"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
 
         <Button
             android:id="@+id/btnSave"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="400px"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="340px"
+            android:layout_gravity="center_horizontal"
             android:text="Submit" />
-
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,11 @@ class MealOrdering : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meal_ordering)
 
+        val actionbar = supportActionBar
+        actionbar!!.title="Meal Ordering"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
 
         btnMakePayment.setOnClickListener{
             calculateTotal()
