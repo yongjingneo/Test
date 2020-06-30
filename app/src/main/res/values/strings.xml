@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="ViewMenu">View Menu</string>
     <string name="SweetSour"><![CDATA[Sweet & Sour]]></string>
     <string name="Curry">Curry</string>
     <string name="KamHeong">Kam Heong</string>
@@ -11,4 +10,5 @@
     <string name="SaltedEgg">Salted Egg</string>
     <string name="Please">Please Select a Rating From 1 to 5:</string>
     <string name="PleaseReview">Please leave a Review here:</string>
+    <string name="MealOdering">Meal Ordering</string>
 </resources>
