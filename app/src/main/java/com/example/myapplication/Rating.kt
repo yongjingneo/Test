@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.Toast
+import androidx.appcompat.view.ActionMode
 import com.google.firebase.database.FirebaseDatabase
 
 class Rating : AppCompatActivity() {
@@ -17,6 +18,12 @@ class Rating : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rating)
+
+
+        val actionbar = supportActionBar
+        actionbar!!.title="Rating"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         /*val rate = findViewById<View>(R.id.ratingBar) as RatingBar
         val submit = findViewById<View>(R.id.btnRate) as Button
@@ -63,13 +70,20 @@ class Rating : AppCompatActivity() {
         }
 
         val ref = FirebaseDatabase.getInstance().getReference("reviews")
-        val heroId = ref.push().key
+        val ratingId = ref.push().key
 
-        val review = Review(heroId,name, ratingBar.numStars)
+        val review = Review(ratingId,name, ratingBar.rating.toInt())
+        //ratingBar.numStars
 
-        ref.child(heroId.toString()).setValue(review).addOnCompleteListener{
+        ref.child(ratingId.toString()).setValue(review).addOnCompleteListener{
             Toast.makeText(applicationContext, "Reviews saved successfully.", Toast.LENGTH_LONG).show()
         }
 
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true;
+    }
+
 }
