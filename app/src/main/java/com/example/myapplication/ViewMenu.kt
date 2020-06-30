@@ -1,10 +1,12 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.GridView
 import com.example.myapplication.com.example.myapplication.adapters.FoodAdapters
 import com.example.myapplication.com.example.myapplication.model.Food
+import kotlinx.android.synthetic.main.activity_view_menu.*
 
 class ViewMenu : AppCompatActivity() {
 
@@ -26,6 +28,10 @@ class ViewMenu : AppCompatActivity() {
         arrayList = setDataList()
         foodAdapters = FoodAdapters(applicationContext, arrayList!!)
         gridView?.adapter = foodAdapters
+
+        btnNextPage.setOnClickListener{
+            startActivity(Intent(this,MealOrdering::class.java))
+        }
     }
 
     private fun setDataList(): ArrayList<Food> {
