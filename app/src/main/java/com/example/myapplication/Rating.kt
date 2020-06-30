@@ -1,11 +1,13 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.ActionMode
 import com.google.firebase.database.FirebaseDatabase
 
@@ -58,6 +60,8 @@ class Rating : AppCompatActivity() {
 
         btnSave.setOnClickListener{
             saveRating()
+
+
         }
     }
 
@@ -78,6 +82,17 @@ class Rating : AppCompatActivity() {
         ref.child(ratingId.toString()).setValue(review).addOnCompleteListener{
             Toast.makeText(applicationContext, "Reviews saved successfully.", Toast.LENGTH_LONG).show()
         }
+        val builder = AlertDialog.Builder(this)
+
+        builder.setTitle("Exit")
+        builder.setMessage("Are you sure you want to exit?")
+
+        builder.setPositiveButton("Yes"){dialog, which ->
+            finish()
+        }
+
+        val dialog:AlertDialog = builder.create()
+        dialog.show()
 
     }
 

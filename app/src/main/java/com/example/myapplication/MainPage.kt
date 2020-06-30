@@ -36,7 +36,7 @@ class MainPage : AppCompatActivity() {
         }
 
         btnMealOrdering.setOnClickListener{
-            startActivity(Intent(this,MealOrdering::class.java))
+            startActivity(Intent(this,ViewMenu::class.java))
 
         }
 
