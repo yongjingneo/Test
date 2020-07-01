@@ -69,12 +69,34 @@ class MealOrdering : AppCompatActivity() {
                 price = price + rate6.text.toString().toDouble()*q6.text.toString().toDouble()
             }
 
+            if(checkBox7.isChecked){
+                total = total + q7.text.toString().toInt()
+                price = price + rate7.text.toString().toDouble()*q7.text.toString().toDouble()
+            }
+
+            if(checkBox8.isChecked){
+                total = total + q8.text.toString().toInt()
+                price = price + rate8.text.toString().toDouble()*q8.text.toString().toDouble()
+            }
+
+            if(checkBox9.isChecked){
+                total = total + q9.text.toString().toInt()
+                price = price + rate9.text.toString().toDouble()*q9.text.toString().toDouble()
+            }
+
             totalItem.setText("Total item ordered\t\t\t" + total.toString())
             totalPrice.setText("Total Price\t\t\t" + String.format("%.2f", price).toDouble())
+
 
             val totalOrderItem =total.toString()
             //val totalOrderPrice =price.toString()
             val totalOrderPrice =String.format("%.2f", price)
+            val name = custName.text.toString().trim()
+
+            if(name.isEmpty()){
+                custName.error = "Please enter a name"
+                return
+            }
 
             val ref = FirebaseDatabase.getInstance().getReference("orders")
             val orderId = ref.push().key
@@ -93,13 +115,12 @@ class MealOrdering : AppCompatActivity() {
                 builder.setNegativeButton("No"){dialog, which ->
                     //startActivity(Intent(this,MealOrdering::class.java))
                     Toast.makeText(this,"You may select your meal now.", Toast.LENGTH_LONG).show()
-
                 }
 
                 val dialog:AlertDialog = builder.create()
                 dialog.show()
             }else {
-                val order = Order(orderId, totalOrderItem, totalOrderPrice)
+                val order = Order(orderId,name,totalOrderItem, totalOrderPrice)
                 ref.child(orderId.toString()).setValue(order).addOnCompleteListener {
                     Toast.makeText(applicationContext, "Order saved successfully.", Toast.LENGTH_LONG).show()
                 }
