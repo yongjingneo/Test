@@ -1,12 +1,17 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
+import com.example.myapplication.com.example.myapplication.Payment
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_meal_ordering.*
 
 class MealOrdering : AppCompatActivity() {
@@ -25,6 +30,8 @@ class MealOrdering : AppCompatActivity() {
             calculateTotal()
             val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
+
+
             }
          }
 
@@ -65,6 +72,39 @@ class MealOrdering : AppCompatActivity() {
             totalItem.setText("Total item ordered\t\t\t" + total.toString())
             totalPrice.setText("Total Price\t\t\t" + String.format("%.2f", price).toDouble())
 
+            val totalOrderItem =total.toString()
+            //val totalOrderPrice =price.toString()
+            val totalOrderPrice =String.format("%.2f", price)
+
+            val ref = FirebaseDatabase.getInstance().getReference("orders")
+            val orderId = ref.push().key
+
+            if(total==0){
+                //Toast.makeText(applicationContext,"Error.",Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(this)
+
+                builder.setTitle("Exit")
+                builder.setMessage("You have not ordered any meal. Are you sure you want to exit?")
+
+                builder.setPositiveButton("Yes"){dialog, which ->
+                    startActivity(Intent(this,MainPage::class.java))
+                }
+
+                builder.setNegativeButton("No"){dialog, which ->
+                    //startActivity(Intent(this,MealOrdering::class.java))
+                    Toast.makeText(this,"You may select your meal now.", Toast.LENGTH_LONG).show()
+
+                }
+
+                val dialog:AlertDialog = builder.create()
+                dialog.show()
+            }else {
+                val order = Order(orderId, totalOrderItem, totalOrderPrice)
+                ref.child(orderId.toString()).setValue(order).addOnCompleteListener {
+                    Toast.makeText(applicationContext, "Order saved successfully.", Toast.LENGTH_LONG).show()
+                }
+                startActivity(Intent(this,Payment::class.java))
+            }
         }
 
 }
