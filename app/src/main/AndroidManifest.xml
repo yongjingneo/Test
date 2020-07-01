@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewMenu" android:parentActivityName=".MainPage" />
+        <activity android:name=".com.example.myapplication.Payment"
+        android:parentActivityName=".MealOrdering"
+        />
+        <activity
+            android:name=".ViewMenu"
+            android:parentActivityName=".MainPage" />
         <activity android:name=".roomConfirm" />
         <activity android:name=".roomSelectDate" />
         <activity android:name=".roomSelectTime" />
