@@ -9,27 +9,14 @@
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/ViewMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/MealOdering"
-                android:textSize="30sp" />
-        </TableRow>
-
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="#f4a460">
 
             <TextView
                 android:id="@+id/Menu"
@@ -37,7 +24,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
                 android:text="Menu"
-                android:textSize="24sp" />
+                android:textStyle="bold"
+                android:layout_marginLeft="20px"
+                android:textSize="24sp"
+                />
 
             <TextView
                 android:id="@+id/Price"
@@ -45,6 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="60"
                 android:text="Price (RM)"
+                android:textStyle="bold"
+                android:layout_marginLeft="8px"
                 android:textSize="20sp" />
 
             <TextView
@@ -53,11 +45,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="20"
                 android:text="Quantity"
+                android:textStyle="bold"
+                android:layout_marginLeft="8px"
                 android:textSize="20sp" />
 
         </TableRow>
 
-        <TableRow
+        <!--<TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
@@ -68,11 +62,13 @@
                 android:layout_weight="30"
                 android:text="Chicken"
                 android:textSize="20sp" />
-        </TableRow>
+
+        </TableRow>-->
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:background="#f1f1f1">
 
             <CheckBox
                 android:id="@+id/checkBox"
@@ -99,21 +95,22 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:background="#f1f1f1">
 
             <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="40"
-                android:text="@string/Curry" />
+                android:text="@string/KamHeong" />
 
             <TextView
                 android:id="@+id/rate2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="39.90" />
+                android:text="25.90" />
 
             <EditText
                 android:id="@+id/q2"
@@ -124,34 +121,25 @@
                 android:inputType="number" />
         </TableRow>
 
-        <TableRow>
-
-            <TextView
-                android:id="@+id/Fish"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:text="Fish"
-                android:textSize="20sp" />
-        </TableRow>
-
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:background="#f1f1f1"
+             >
 
             <CheckBox
                 android:id="@+id/checkBox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="40"
-                android:text="@string/Steam" />
+                android:text="@string/Curry" />
 
             <TextView
                 android:id="@+id/rate3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="59.90" />
+                android:text="39.90" />
 
             <EditText
                 android:id="@+id/q3"
@@ -162,16 +150,30 @@
                 android:inputType="number" />
         </TableRow>
 
+        <!--<TableRow>
+
+            <TextView
+                android:id="@+id/Fish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="Fish"
+                android:textSize="20sp" />
+        </TableRow>-->
+
+
+
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:background="#ffefd5">
 
             <CheckBox
                 android:id="@+id/checkBox4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="40"
-                android:text="@string/Curry" />
+                android:text="@string/CurryFish" />
 
             <TextView
                 android:id="@+id/rate4"
@@ -189,34 +191,24 @@
                 android:inputType="number" />
         </TableRow>
 
-        <TableRow>
-
-            <TextView
-                android:id="@+id/Prawn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:text="Prawn"
-                android:textSize="20sp" />
-        </TableRow>
-
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:background="#ffefd5">
 
             <CheckBox
                 android:id="@+id/checkBox5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="40"
-                android:text="@string/Chilli" />
+                android:text="@string/Sambal" />
 
             <TextView
                 android:id="@+id/rate5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="60.90" />
+                android:text="45.90" />
 
             <EditText
                 android:id="@+id/q5"
@@ -227,23 +219,35 @@
                 android:inputType="number" />
         </TableRow>
 
+        <!--<TableRow>
+
+            <TextView
+                android:id="@+id/Prawn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="Prawn"
+                android:textSize="20sp" />
+        </TableRow>-->
+
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:background="#ffefd5">
 
             <CheckBox
                 android:id="@+id/checkBox6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="40"
-                android:text="@string/Onion" />
+                android:text="@string/Steam" />
 
             <TextView
                 android:id="@+id/rate6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="55.90" />
+                android:text="59.90" />
 
             <EditText
                 android:id="@+id/q6"
@@ -254,10 +258,106 @@
                 android:inputType="number" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00bfff">
+
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:text="@string/Onion" />
+
+            <TextView
+                android:id="@+id/rate7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="55.90" />
+
+            <EditText
+                android:id="@+id/q7"
+                android:layout_width="124dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_weight="20"
+                android:inputType="number" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00bfff">
+
+            <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:text="@string/SaltedEgg" />
+
+            <TextView
+                android:id="@+id/rate8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="62.90" />
+
+            <EditText
+                android:id="@+id/q8"
+                android:layout_width="124dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_weight="20"
+                android:inputType="number" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00bfff">
+
+            <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:text="@string/Chilli" />
+
+            <TextView
+                android:id="@+id/rate9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="60.90" />
+
+            <EditText
+                android:id="@+id/q9"
+                android:layout_width="124dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_weight="20"
+                android:inputType="number" />
+        </TableRow>
+
+
+        <EditText
+            android:id="@+id/custName"
+            android:layout_width="10dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:layout_marginRight="470px"
+            android:hint="Customer Name"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/btnMakePayment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_marginLeft="340px"
+            android:layout_marginRight="340px"
+            android:layout_height="40dp"
             android:text="Confirm Order" />
 
 
@@ -266,8 +366,6 @@
                 android:id="@+id/totalItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
-
         </TableRow>
         <TableRow>
             <TextView
@@ -277,6 +375,8 @@
                 android:text="" />
         </TableRow>
     </TableLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

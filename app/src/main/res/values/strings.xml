@@ -1,14 +1,15 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="SweetSour"><![CDATA[Sweet & Sour]]></string>
-    <string name="Curry">Curry</string>
-    <string name="KamHeong">Kam Heong</string>
-    <string name="Steam">Steam</string>
-    <string name="Sambal">Sambal</string>
-    <string name="Chilli">Chilli</string>
-    <string name="Onion">Onion</string>
-    <string name="SaltedEgg">Salted Egg</string>
+    <string name="Curry">Curry Chicken</string>
+    <string name="KamHeong">Kam Heong Chicken</string>
+    <string name="Steam">Steam Fish</string>
+    <string name="Sambal">Sambal Fish</string>
+    <string name="Chilli">Chilli Prawn</string>
+    <string name="Onion">Onion Prawn</string>
+    <string name="SaltedEgg">Salted Egg Prawn</string>
     <string name="Please">Please Select a Rating From 1 to 5:</string>
     <string name="PleaseReview">Please leave a Review here:</string>
     <string name="MealOdering">Meal Ordering</string>
+    <string name="SweetSour"><![CDATA[Sweet & Sour chicken]]></string>
+    <string name="CurryFish">Curry Fish</string>
 </resources>
