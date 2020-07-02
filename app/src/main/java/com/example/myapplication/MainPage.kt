@@ -44,5 +44,9 @@ class MainPage : AppCompatActivity() {
 
         }
 
+        btnPayment.setOnClickListener{
+            startActivity(Intent(this,Payment::class.java))
+        }
+
     }
 }

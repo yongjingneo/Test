@@ -4,14 +4,10 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import com.example.myapplication.com.example.myapplication.Payment
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_meal_ordering.*
 
 class MealOrdering : AppCompatActivity() {
@@ -39,47 +35,47 @@ class MealOrdering : AppCompatActivity() {
             var total:Int = 0
             var price:Double = 0.00
 
-            if(checkBox.isChecked){
+            if(checkBox.isChecked  && q1.text.isNotEmpty()){
                 total = total + q1.text.toString().toInt()
                 price = price + rate1.text.toString().toDouble()*q1.text.toString().toDouble()
             }
 
-            if(checkBox2.isChecked){
+            if(checkBox2.isChecked && q2.text.isNotEmpty()){
                 total = total + q2.text.toString().toInt()
                 price = price + rate2.text.toString().toDouble()*q2.text.toString().toDouble()
             }
 
-            if(checkBox3.isChecked){
+            if(checkBox3.isChecked && q3.text.isNotEmpty()){
                 total = total + q3.text.toString().toInt()
                 price = price + rate3.text.toString().toDouble()*q3.text.toString().toDouble()
             }
 
-            if(checkBox4.isChecked){
+            if(checkBox4.isChecked && q4.text.isNotEmpty()){
                 total = total + q4.text.toString().toInt()
                 price = price + rate4.text.toString().toDouble()*q4.text.toString().toDouble()
             }
 
-            if(checkBox5.isChecked){
+            if(checkBox5.isChecked && q5.text.isNotEmpty()){
                 total = total + q5.text.toString().toInt()
                 price = price + rate5.text.toString().toDouble()*q5.text.toString().toDouble()
             }
 
-            if(checkBox6.isChecked){
+            if(checkBox6.isChecked && q6.text.isNotEmpty()){
                 total = total + q6.text.toString().toInt()
                 price = price + rate6.text.toString().toDouble()*q6.text.toString().toDouble()
             }
 
-            if(checkBox7.isChecked){
+            if(checkBox7.isChecked && q7.text.isNotEmpty()){
                 total = total + q7.text.toString().toInt()
                 price = price + rate7.text.toString().toDouble()*q7.text.toString().toDouble()
             }
 
-            if(checkBox8.isChecked){
+            if(checkBox8.isChecked && q8.text.isNotEmpty()){
                 total = total + q8.text.toString().toInt()
                 price = price + rate8.text.toString().toDouble()*q8.text.toString().toDouble()
             }
 
-            if(checkBox9.isChecked){
+            if(checkBox9.isChecked && q9.text.isNotEmpty()){
                 total = total + q9.text.toString().toInt()
                 price = price + rate9.text.toString().toDouble()*q9.text.toString().toDouble()
             }
@@ -92,6 +88,7 @@ class MealOrdering : AppCompatActivity() {
             //val totalOrderPrice =price.toString()
             val totalOrderPrice =String.format("%.2f", price)
             val name = custName.text.toString().trim()
+
 
             if(name.isEmpty()){
                 custName.error = "Please enter a name"
@@ -124,7 +121,7 @@ class MealOrdering : AppCompatActivity() {
                 ref.child(orderId.toString()).setValue(order).addOnCompleteListener {
                     Toast.makeText(applicationContext, "Order saved successfully.", Toast.LENGTH_LONG).show()
                 }
-                startActivity(Intent(this,Payment::class.java))
+                startActivity(Intent(this, Payment::class.java))
             }
         }
 
