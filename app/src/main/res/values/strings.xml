@@ -12,4 +12,5 @@
     <string name="MealOdering">Meal Ordering</string>
     <string name="SweetSour"><![CDATA[Sweet & Sour chicken]]></string>
     <string name="CurryFish">Curry Fish</string>
+    <string name="TQ">Thank you for using our service!</string>
 </resources>
