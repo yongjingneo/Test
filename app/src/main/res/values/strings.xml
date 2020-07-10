@@ -5,6 +5,8 @@
     <string name="Steam">Steam Fish</string>
     <string name="Sambal">Sambal Fish</string>
     <string name="Chilli">Chilli Prawn</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <string name="Onion">Onion Prawn</string>
     <string name="SaltedEgg">Salted Egg Prawn</string>
     <string name="Please">Please Select a Rating From 1 to 5:</string>

@@ -62,7 +62,9 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
             val amount = amountEdit.text.toString()
 
             if(amount.isEmpty()){
+                amountEdit.error = "Please enter an amount"
                 return@setOnClickListener
+
             }
 
             getOrderId(amount)
