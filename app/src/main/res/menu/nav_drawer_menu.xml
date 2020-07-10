@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/myItem1"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile"/>
+    <item
+        android:id="@+id/myItem2"
+        android:icon="@drawable/ic_restaurant"
+        android:title="Meal Ordering"/>
+    <item
+        android:id="@+id/myItem3"
+        android:icon="@drawable/ic_room"
+        android:title="Reserve Room"/>
+    <item
+        android:id="@+id/myItem4"
+        android:icon="@drawable/ic_table"
+        android:title="Reserve Table"/>
+    <item
+        android:id="@+id/myItem5"
+        android:icon="@drawable/ic_payment"
+        android:title="Payment"/>
+    <item
+        android:id="@+id/myItem6"
+        android:icon="@drawable/ic_feedback"
+        android:title="Rating"/>
+
+</menu>
