@@ -1,14 +1,16 @@
 package com.example.myapplication
 
-import com.google.firebase.database.Exclude
-import java.util.*
+import android.provider.ContactsContract
 
-class tableReservation (
-    @get:Exclude
+class tableReservation(
     val id: String,
-    val date: String ,
+    val mail: String,
+    val date: String,
     val time: String,
-    val tableNo: Int
-){
-    constructor():this("","","",0)
+    val size: String,
+    val no: String
+) {
+    constructor():this("","","","","",""){
+
+    }
 }

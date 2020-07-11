@@ -1,9 +1,11 @@
-package com.example.myapplication.Table
+package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.myapplication.R
+import com.example.myapplication.no
+import com.example.myapplication.size
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_confirm_table.*
@@ -34,11 +36,11 @@ class confirmTable : AppCompatActivity() {
         txtTNo.text = no
 
         btnConfirmTable.setOnClickListener {
-            saveTableReservation()
+            //saveTableReservation()
         }
     }
 
-    private fun saveTableReservation(){
+//    private fun saveTableReservation(){
 //        val text1 = txtTmail.text.toString()
 //        val text2 = txtTdate.text.toString()
 //        val text3 = txtTtime.text.toString()
@@ -58,6 +60,6 @@ class confirmTable : AppCompatActivity() {
 //            Toast.makeText(applicationContext,"Reserve Successful.", Toast.LENGTH_SHORT).show()
 //        }
 //
-//        Toast.makeText(applicationContext,"ful.", Toast.LENGTH_SHORT).show()
-    }
+//        //Toast.makeText(applicationContext,"ful.", Toast.LENGTH_SHORT).show()
+//    }
 }

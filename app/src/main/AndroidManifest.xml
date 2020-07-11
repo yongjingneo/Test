@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".confirmTable"></activity>
+        <activity android:name=".confirmRoom"></activity>
+        <activity android:name=".confirmTable" />
         <activity android:name=".tableSize" />
         <activity android:name=".com.example.myapplication.ChangePassword" />
         <activity
