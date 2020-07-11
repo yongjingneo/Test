@@ -1,9 +1,14 @@
 package com.example.myapplication
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_change_password.*
@@ -14,15 +19,17 @@ class ChangePassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_password)
+        val actionbar = supportActionBar
+        actionbar!!.title="Change Password"
 
         auth = FirebaseAuth.getInstance()
 
         btnConfirm.setOnClickListener {
-            changePassword()
+            changePassword(it)
         }
     }
 
-    private fun changePassword(){
+    private fun changePassword(view: View){
         if(txtCurrentPW.text.isNotEmpty() && txtNewPW.text.isNotEmpty() && txtConfirmPW.text.isNotEmpty()){
             if(txtNewPW.text.toString().equals(txtConfirmPW.text.toString())){
 
@@ -35,7 +42,7 @@ class ChangePassword : AppCompatActivity() {
                         .addOnCompleteListener {
                             if(it.isSuccessful){
                                 //Toast.makeText(this, "Authentication successful.", Toast.LENGTH_SHORT).show()
-                                user!!.updatePassword(txtNewPW.text.toString())
+                                user.updatePassword(txtNewPW.text.toString())
                                     .addOnCompleteListener { task ->
                                         if (task.isSuccessful) {
                                             Toast.makeText(this, "Password changed successfully.", Toast.LENGTH_SHORT).show()
@@ -60,5 +67,9 @@ class ChangePassword : AppCompatActivity() {
         }else{
             Toast.makeText(this, "Please fill all the fields.", Toast.LENGTH_SHORT).show()
         }
+
+        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+
     }
 }

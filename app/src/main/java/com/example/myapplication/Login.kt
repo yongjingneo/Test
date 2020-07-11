@@ -1,10 +1,13 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -18,6 +21,8 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        val actionbar = supportActionBar
+        actionbar!!.title="Login"
 
         auth = FirebaseAuth.getInstance()
 
@@ -41,11 +46,11 @@ class Login : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener {
-            doLogin()
+            doLogin(it)
         }
     }
 
-    private fun doLogin(){
+    private fun doLogin(view:View){
         if(txtLoginEmail.text.toString().isEmpty()){
             txtLoginEmail.error = "Please enter email"
             txtLoginEmail.requestFocus()
@@ -75,6 +80,9 @@ class Login : AppCompatActivity() {
                     updateUI(null)
                 }
             }
+
+        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 
     }
 
