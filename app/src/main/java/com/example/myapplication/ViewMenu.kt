@@ -38,15 +38,15 @@ class ViewMenu : AppCompatActivity() {
 
         var arrayList: ArrayList<Food> = ArrayList()
 
-        arrayList.add(Food(R.drawable.chick1,"Sweet & Sour Chicken RM29.90"))
-        arrayList.add(Food(R.drawable.chick2,"Kam Heong Chicken  RM25.90"))
-        arrayList.add(Food(R.drawable.chick3,"Curry Chicken RM39.90"))
-        arrayList.add(Food(R.drawable.fish1,"Curry Fish   RM70.90"))
-        arrayList.add(Food(R.drawable.fish2,"Sambal Fish   RM45.90"))
-        arrayList.add(Food(R.drawable.fish3,"Steam Fish   RM59.90"))
-        arrayList.add(Food(R.drawable.prawn1,"Onion Prawn   RM55.90"))
-        arrayList.add(Food(R.drawable.prawn2,"Salted Egg Prawn   RM62.90"))
-        arrayList.add(Food(R.drawable.prawn3,"Chilli Prawn   RM60.90"))
+        arrayList.add(Food(R.drawable.chick1,"Sweet & Sour Chicken RM29.00"))
+        arrayList.add(Food(R.drawable.chick2,"Kam Heong Chicken  RM25.00"))
+        arrayList.add(Food(R.drawable.chick3,"Curry Chicken RM39.00"))
+        arrayList.add(Food(R.drawable.fish1,"Curry Fish   RM70.00"))
+        arrayList.add(Food(R.drawable.fish2,"Sambal Fish   RM45.00"))
+        arrayList.add(Food(R.drawable.fish3,"Steam Fish   RM59.00"))
+        arrayList.add(Food(R.drawable.prawn1,"Onion Prawn   RM55.00"))
+        arrayList.add(Food(R.drawable.prawn2,"Salted Egg Prawn   RM62.00"))
+        arrayList.add(Food(R.drawable.prawn3,"Chilli Prawn   RM60.00"))
 
         return arrayList
     }

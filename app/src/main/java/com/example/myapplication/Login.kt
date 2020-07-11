@@ -19,6 +19,8 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val actionbar = supportActionBar
+        actionbar!!.title="Login"
         auth = FirebaseAuth.getInstance()
 
         txtReg.setOnClickListener{

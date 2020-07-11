@@ -15,4 +15,5 @@
     <string name="SweetSour"><![CDATA[Sweet & Sour chicken]]></string>
     <string name="CurryFish">Curry Fish</string>
     <string name="TQ">Thank you for using our service!</string>
+    <string name="stringPayment">Please enter full amount or pay during dine in:</string>
 </resources>
