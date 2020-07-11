@@ -1,9 +1,12 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_register.*
@@ -14,11 +17,13 @@ class Register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        val actionbar = supportActionBar
+        actionbar!!.title="Register"
 
         auth = FirebaseAuth.getInstance()
 
         btnReg.setOnClickListener {
-            registerUser()
+            registerUser(it)
         }
 
         txtLogin.setOnClickListener {
@@ -27,7 +32,7 @@ class Register : AppCompatActivity() {
         }
     }
 
-    private fun registerUser(){
+    private fun registerUser(view:View){
         if(txtRegEmail.text.toString().isEmpty()){
             txtRegEmail.error = "Please enter email"
             txtRegEmail.requestFocus()
@@ -57,7 +62,7 @@ class Register : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     user!!.sendEmailVerification()
-                        .addOnCompleteListener { task ->
+                        .addOnCompleteListener { _ ->
                             if (task.isSuccessful) {
                                 startActivity(Intent(this,Login::class.java))
                                 finish()
@@ -68,6 +73,9 @@ class Register : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Email already registered.", Toast.LENGTH_SHORT).show()
                 }
             }
+
+        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
 }

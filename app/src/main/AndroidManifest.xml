@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".com.example.myapplication.ChangePassword"></activity>
+        <activity android:name=".confirmTable"></activity>
+        <activity android:name=".tableSize" />
+        <activity android:name=".com.example.myapplication.ChangePassword" />
         <activity
             android:name=".Payment"
             android:parentActivityName=".MealOrdering" />
@@ -22,7 +24,6 @@
         <activity android:name=".roomConfirm" />
         <activity android:name=".roomSelectDate" />
         <activity android:name=".roomSelectTime" />
-        <activity android:name=".confirmTable" />
         <activity android:name=".tableSelectTime" />
         <activity android:name=".tableSelectDate" />
         <activity android:name=".Profile" />
