@@ -3,106 +3,152 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:orientation="vertical"
-    android:paddingStart="30dp"
-    android:paddingEnd="30dp">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView18"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50sp"
-        android:text="Table Reservation"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="30sp" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="30sp"
+        android:layout_marginBottom="30sp">
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:text="Email"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
+            android:layout_marginRight="30sp"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtTmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Table Reservation"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:text="Date"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Email"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/txtTdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/txtTmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:text="Time"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Date"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/txtTtime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/txtTdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:text="Table size"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Time"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/txtTtable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/txtTtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:text="Table no."
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Table size"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/txtTNo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20sp"
-        android:text="TextView"
-        android:textSize="20sp" />
+            <TextView
+                android:id="@+id/txtTtable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btnConfirmTable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_on_secondary"
-        android:text="Confirm"
-        android:textColor="@color/design_default_color_on_primary" />
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Table no."
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtTNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Name"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextTName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Phone Number"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editTextTPhoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:ems="10"
+                android:inputType="phone" />
+
+            <Button
+                android:id="@+id/btnConfirmTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/design_default_color_on_secondary"
+                android:text="Confirm"
+                android:textColor="@color/design_default_color_on_primary" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

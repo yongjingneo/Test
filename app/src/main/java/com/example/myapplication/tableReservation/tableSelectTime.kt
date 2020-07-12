@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AlertDialog
 import com.example.myapplication.R
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_check_table_reservation.*
@@ -84,8 +85,17 @@ class tableSelectTime : AppCompatActivity() {
         } )
 
         btnNext3.setOnClickListener {
-            recordTime()
-            startActivity(Intent(this, confirmTable::class.java))
+            if(timeOption.selectedItemPosition == 0){
+                val messageBox = AlertDialog.Builder(this)
+                messageBox.setTitle("Message")
+                messageBox.setMessage("Please select time.")
+                messageBox.setPositiveButton("OK",{ _, _ ->
+                })
+                messageBox.show()
+            }else{
+                recordTime()
+                startActivity(Intent(this, confirmTable::class.java))
+            }
         }
     }
 

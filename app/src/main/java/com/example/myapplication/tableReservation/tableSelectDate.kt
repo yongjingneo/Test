@@ -3,12 +3,13 @@ package com.example.myapplication.tableReservation
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.CalendarView
 import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_reserve_table.*
 import java.util.*
 
-lateinit var date:String
+var date:String = ""
 
 class tableSelectDate : AppCompatActivity() {
 
@@ -21,11 +22,13 @@ class tableSelectDate : AppCompatActivity() {
         val today = Calendar.getInstance().timeInMillis
         calendarTable.minDate = today
 
-        //textView7.text = today.toString()
+        date = Calendar.getInstance().get(Calendar.DAY_OF_MONTH).toString() + "/" +
+                (Calendar.getInstance().get(Calendar.MONTH) + 1).toString() + "/" +
+                Calendar.getInstance().get(Calendar.YEAR).toString()
+
 
         calendarTable.setOnDateChangeListener(CalendarView.OnDateChangeListener { _, year, month, dayOfMonth ->
             date = dayOfMonth.toString() + "/" + (month + 1) + "/" + year
-            //textView7.text = date
         })
 
         btnNext2.setOnClickListener {

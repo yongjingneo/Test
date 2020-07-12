@@ -15,6 +15,8 @@ class tableAdapter(val mCtx: Context, val layoutResId: Int, val tableList:List<t
         val layoutInflater: LayoutInflater= LayoutInflater.from(mCtx)
         val view: View = layoutInflater.inflate(layoutResId,null)
 
+        val txtTableName =view.findViewById<TextView>(R.id.txtTableName)
+        val txtTablePhoneNo =view.findViewById<TextView>(R.id.txtTablePhoneNo)
         val txtTableMail =view.findViewById<TextView>(R.id.txtTableMail)
         val txtTableDate =view.findViewById<TextView>(R.id.txtTableDate)
         val txtTableTime =view.findViewById<TextView>(R.id.txtTableTime)
@@ -23,6 +25,8 @@ class tableAdapter(val mCtx: Context, val layoutResId: Int, val tableList:List<t
 
         val table = tableList[position]
 
+        txtTableName.text = table.nameT
+        txtTablePhoneNo.text = table.phoneNo
         txtTableMail.text = table.mail
         txtTableDate.text = table.date
         txtTableTime.text = table.time
