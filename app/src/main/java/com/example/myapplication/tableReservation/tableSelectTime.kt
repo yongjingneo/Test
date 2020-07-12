@@ -13,11 +13,6 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 lateinit var time:String
-val time1: String = "10:00am-12:00pm"
-val time2: String = "12:30pm-2:30pm"
-val time3: String = "3:00pm-5:00pm"
-val time4: String = "5:30pm-7:30pm"
-val time5: String = "8:00pm-10:00pm"
 
 class tableSelectTime : AppCompatActivity() {
 
@@ -30,6 +25,12 @@ class tableSelectTime : AppCompatActivity() {
         actionbar!!.title="Table Reservation"
 
         ref = FirebaseDatabase.getInstance().getReference("tableReservations")
+
+        val time1: String = "10:00am-12:00pm"
+        val time2: String = "12:30pm-2:30pm"
+        val time3: String = "3:00pm-5:00pm"
+        val time4: String = "5:30pm-7:30pm"
+        val time5: String = "8:00pm-10:00pm"
 
 
         var timeOptions = arrayOf("Select time",time1, time2, time3, time4, time5)
@@ -89,19 +90,19 @@ class tableSelectTime : AppCompatActivity() {
     }
 
     private fun recordTime(){
-        if(timeOption.selectedItemPosition == 0){
+        if(timeOption.selectedItemPosition == 1){
             time = "10:00am-12:00pm"
         }
-        if(timeOption.selectedItemPosition == 1){
+        if(timeOption.selectedItemPosition == 2){
             time = "12:30pm-2:30pm"
         }
-        if(timeOption.selectedItemPosition == 2){
+        if(timeOption.selectedItemPosition == 3){
             time = "3:00pm-5:00pm"
         }
-        if(timeOption.selectedItemPosition == 3){
+        if(timeOption.selectedItemPosition == 4){
             time = "5:30pm-7:30pm"
         }
-        if(timeOption.selectedItemPosition == 4){
+        if(timeOption.selectedItemPosition == 5){
             time = "8:00pm-10:00pm"
         }
     }
