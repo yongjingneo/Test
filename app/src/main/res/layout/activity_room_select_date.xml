@@ -4,21 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".roomSelectDate">
+    android:background="@drawable/background"
+    tools:context=".Room.roomSelectDate">
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Room Reservation"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Room extra charge: RM50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView61" />
+
+    <TextView
+        android:id="@+id/textView61"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -26,25 +38,26 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
     <CalendarView
-        android:id="@+id/calendarView2"
+        android:id="@+id/calendarRoom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:minDate="6/29/2020"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView61" />
 
     <Button
-        android:id="@+id/btnNext2"
+        android:id="@+id/btnNext21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:background="@color/design_default_color_on_secondary"
         android:text="Next"
+        android:textColor="@color/design_default_color_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView2" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarRoom" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

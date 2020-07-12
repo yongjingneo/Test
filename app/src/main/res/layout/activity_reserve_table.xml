@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Table.tableSelectDate">
+    tools:context=".tableReservation.tableSelectDate">
 
     <TextView
         android:id="@+id/textView3"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Table Reservation"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,9 +43,9 @@
         android:id="@+id/btnNext2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
+        android:background="@color/design_default_color_on_secondary"
         android:text="Next"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="@color/design_default_color_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarTable" />

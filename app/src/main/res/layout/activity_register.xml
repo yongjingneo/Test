@@ -59,7 +59,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@android:color/black"
                 android:text="Register"
-                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+                android:textColor="@color/design_default_color_on_primary" />
 
             <TextView
                 android:id="@+id/txtLogin"
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Login"
-                android:textColor="@color/stepview_mark"
+                android:textColor="@android:color/holo_blue_dark"
                 android:textSize="18sp" />
 
         </LinearLayout>

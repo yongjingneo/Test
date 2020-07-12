@@ -25,7 +25,7 @@
         android:paddingTop="20sp"
         android:text="Small table - 4 seats"
         android:textAlignment="center"
-        android:textColor="@color/stepview_mark"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="20sp" />
 
     <TextView
@@ -35,7 +35,7 @@
         android:paddingBottom="20sp"
         android:text="Big table - 10 seats"
         android:textAlignment="center"
-        android:textColor="@color/stepview_mark"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="20sp" />
 
     <Spinner
@@ -79,8 +79,8 @@
         android:id="@+id/btnNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
+        android:background="@color/design_default_color_on_secondary"
         android:text="Next"
-        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+        android:textColor="@color/design_default_color_background" />
 
 </LinearLayout>

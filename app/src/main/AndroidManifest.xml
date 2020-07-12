@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".confirmTable"></activity>
-        <activity android:name=".tableSize" />
+        <activity android:name=".tableReservation.checkTableReservation"></activity>
+        <activity android:name=".roomReservation.Reservation" />
+        <activity android:name=".roomReservation.confirmRoom" />
+        <activity android:name=".tableReservation.confirmTable" />
+        <activity android:name=".tableReservation.tableSize" />
         <activity android:name=".com.example.myapplication.ChangePassword" />
         <activity
             android:name=".Payment"
@@ -22,10 +25,10 @@
             android:name=".ViewMenu"
             android:parentActivityName=".MainPage" />
         <activity android:name=".roomConfirm" />
-        <activity android:name=".roomSelectDate" />
-        <activity android:name=".roomSelectTime" />
-        <activity android:name=".tableSelectTime" />
-        <activity android:name=".tableSelectDate" />
+        <activity android:name=".roomReservation.roomSelectDate" />
+        <activity android:name=".roomReservation.roomSelectTime" />
+        <activity android:name=".tableReservation.tableSelectTime" />
+        <activity android:name=".tableReservation.tableSelectDate" />
         <activity android:name=".Profile" />
         <activity
             android:name=".Rating"

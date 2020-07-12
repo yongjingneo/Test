@@ -1,4 +1,4 @@
-package com.example.myapplication.Table
+package com.example.myapplication.tableReservation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

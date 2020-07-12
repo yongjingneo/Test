@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="30sp"
+    android:layout_marginRight="30sp"
+    android:orientation="vertical"
+    android:paddingTop="20sp"
+    android:paddingBottom="20sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Email"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtRoomMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAlignment="viewStart"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Date"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtRoomDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAlignment="viewStart"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Time"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txtRoomTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAlignment="viewStart"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>
