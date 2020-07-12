@@ -6,12 +6,14 @@ class tableReservation(
     @get:Exclude
     val id: String,
     val mail: String,
+    val nameT: String,
+    val phoneNo:String,
     val date: String,
     val time: String,
     val size: String,
     val no: String
 ) {
-    constructor():this("","","","","",""){
+    constructor():this("","","","","","","",""){
 
     }
 }

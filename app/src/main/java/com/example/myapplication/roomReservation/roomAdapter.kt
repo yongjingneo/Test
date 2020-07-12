@@ -18,9 +18,13 @@ class roomAdapter(val mCtx: Context, val layoutResId: Int, val roomList:List<roo
         val txtRoomMail =view.findViewById<TextView>(R.id.txtRoomMail)
         val txtRoomDate =view.findViewById<TextView>(R.id.txtRoomDate)
         val txtRoomTime =view.findViewById<TextView>(R.id.txtRoomTime)
+        val txtRoomName =view.findViewById<TextView>(R.id.txtRoomName)
+        val txtRoomPhoneNo =view.findViewById<TextView>(R.id.txtRoomPhoneNo)
 
         val room = roomList[position]
 
+        txtRoomName.text = room.nameR
+        txtRoomPhoneNo.text = room.phoneNo
         txtRoomMail.text = room.mail
         txtRoomDate.text = room.date
         txtRoomTime.text = room.time

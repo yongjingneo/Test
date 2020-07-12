@@ -20,11 +20,13 @@ class roomSelectDate : AppCompatActivity() {
         val today = Calendar.getInstance().timeInMillis
         calendarRoom.minDate = today
 
-        //textView71.text = today.toString()
+        dateRoom = Calendar.getInstance().get(Calendar.DAY_OF_MONTH).toString() + "/" +
+                    (Calendar.getInstance().get(Calendar.MONTH) + 1).toString() + "/" +
+                    Calendar.getInstance().get(Calendar.YEAR).toString()
+
 
         calendarRoom.setOnDateChangeListener(CalendarView.OnDateChangeListener { _, year, month, dayOfMonth ->
             dateRoom = dayOfMonth.toString() + "/" + (month + 1) + "/" + year
-            //textView71.text = dateRoom
         })
 
         btnNext21.setOnClickListener {

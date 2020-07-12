@@ -1,10 +1,8 @@
 package com.example.myapplication.roomReservation
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.myapplication.MainPage
 import com.example.myapplication.R
@@ -31,7 +29,16 @@ class confirmRoom : AppCompatActivity() {
         txtRtime.text = timeRoom
 
         btnConfirmRoom.setOnClickListener {
+            if(editTextRName.text.isEmpty()){
+                editTextRName.error = "Name is required."
+                return@setOnClickListener
+            }
+            if(editTextRPN.text.isEmpty()){
+                editTextRPN.error = "Phone number is required."
+                return@setOnClickListener
+            }
             saveRoomReservation()
+
         }
     }
 
@@ -39,7 +46,8 @@ class confirmRoom : AppCompatActivity() {
         val ref = FirebaseDatabase.getInstance().getReference("roomReservations")
         val roomId = ref.push().key
 
-        val room = roomReservation(roomId!!,txtRmail.text.toString(), dateRoom, timeRoom)
+        val room = roomReservation(roomId!!,txtRmail.text.toString(), editTextRName.text.toString(),editTextRPN.text.toString(),
+            dateRoom, timeRoom)
 
         ref.child(roomId).setValue(room).addOnCompleteListener {
             val confirmDialog = AlertDialog.Builder(this)

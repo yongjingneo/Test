@@ -11,7 +11,7 @@
         android:id="@+id/textView181"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="20sp"
         android:text="Room Reservation"
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="30sp" />
@@ -61,9 +61,43 @@
         android:id="@+id/txtRtime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20sp"
         android:text="TextView"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="Name"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextRName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="Phone Number"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editTextRPN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="phone" />
 
     <Button
         android:id="@+id/btnConfirmRoom"

@@ -35,6 +35,14 @@ class confirmTable : AppCompatActivity() {
         txtTNo.text = no
 
         btnConfirmTable.setOnClickListener {
+            if(editTextTName.text.isEmpty()){
+                editTextTName.error = "Name is required."
+                return@setOnClickListener
+            }
+            if(editTextTPhoneNo.text.isEmpty()){
+                editTextTPhoneNo.error = "Phone number is required."
+                return@setOnClickListener
+            }
             saveTableReservation()
         }
     }
@@ -44,7 +52,8 @@ class confirmTable : AppCompatActivity() {
         val ref = FirebaseDatabase.getInstance().getReference("tableReservations")
         val tableId = ref.push().key
 
-        val table = tableReservation(tableId!!,txtTmail.text.toString(),date,time,size, no)
+        val table = tableReservation(tableId!!,txtTmail.text.toString(), editTextTName.text.toString(),editTextTPhoneNo.text.toString(),
+            date,time,size, no)
 
         ref.child(tableId).setValue(table).addOnCompleteListener {
             val confirmDialog = AlertDialog.Builder(this)
