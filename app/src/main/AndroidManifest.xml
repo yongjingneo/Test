@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Reservation"></activity>
+        <activity android:name=".tableReservation.checkTableReservation"></activity>
+        <activity android:name=".roomReservation.Reservation" />
         <activity android:name=".roomReservation.confirmRoom" />
         <activity android:name=".tableReservation.confirmTable" />
         <activity android:name=".tableReservation.tableSize" />

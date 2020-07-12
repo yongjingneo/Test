@@ -3,6 +3,8 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.myapplication.roomReservation.Reservation
+import com.example.myapplication.tableReservation.checkTableReservation
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_profile.*
 
@@ -25,6 +27,10 @@ class Profile : AppCompatActivity() {
 
         btnCheckRoom.setOnClickListener {
             startActivity(Intent(this, Reservation::class.java))
+        }
+
+        btnCheckTable.setOnClickListener {
+            startActivity(Intent(this, checkTableReservation::class.java))
         }
     }
 

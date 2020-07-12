@@ -10,16 +10,16 @@
 
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textView70"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30sp"
-        android:text="Room Reservation"
+        android:text="Table Reservation"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="30sp" />
 
     <ListView
-        android:id="@+id/listRoom"
+        android:id="@+id/listTable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">

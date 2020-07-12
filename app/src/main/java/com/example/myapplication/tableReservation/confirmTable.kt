@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.myapplication.*
+import com.example.myapplication.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_check_table_reservation.*
 import kotlinx.android.synthetic.main.activity_confirm_table.*
 
 
@@ -15,7 +17,6 @@ import kotlinx.android.synthetic.main.activity_confirm_table.*
 class confirmTable : AppCompatActivity() {
 
     lateinit var auth:FirebaseAuth
-    //lateinit var tableList: MutableList<tableReservation>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +25,6 @@ class confirmTable : AppCompatActivity() {
         actionbar!!.title="Table Reservation"
 
         auth = FirebaseAuth.getInstance()
-        //tableList = mutableListOf()
-        //ref= FirebaseDatabase.getInstance().getReference("tableReservation")
 
         val user = auth.currentUser!!.email.toString()
 
