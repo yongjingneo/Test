@@ -45,7 +45,7 @@ class MealOrdering : AppCompatActivity() {
             if(checkBox2.isChecked && q2.text.isNotEmpty()){
                 total = total + q2.text.toString().toInt()
                 price = price + rate2.text.toString().toDouble()*q2.text.toString().toDouble()
-                selected = selected + ","+ checkBox2.text.toString()
+                selected = selected + "," + checkBox2.text.toString()
             }
 
             if(checkBox3.isChecked && q3.text.isNotEmpty()){
