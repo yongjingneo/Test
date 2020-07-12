@@ -25,7 +25,7 @@
 
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Sweet And Sour   RM29.90"
+            android:text="Sweet And Sour   RM29.00"
             android:id="@+id/name_text_view"
             android:textStyle="bold"/>
 

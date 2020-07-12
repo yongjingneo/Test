@@ -82,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="29.90" />
+                android:text="29.00" />
 
             <EditText
                 android:id="@+id/q1"
@@ -110,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="25.90" />
+                android:text="25.00" />
 
             <EditText
                 android:id="@+id/q2"
@@ -139,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="39.90" />
+                android:text="39.00" />
 
             <EditText
                 android:id="@+id/q3"
@@ -180,7 +180,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="70.90" />
+                android:text="70.00" />
 
             <EditText
                 android:id="@+id/q4"
@@ -208,7 +208,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="45.90" />
+                android:text="45.00" />
 
             <EditText
                 android:id="@+id/q5"
@@ -247,7 +247,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="59.90" />
+                android:text="59.00" />
 
             <EditText
                 android:id="@+id/q6"
@@ -275,7 +275,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="55.90" />
+                android:text="55.00" />
 
             <EditText
                 android:id="@+id/q7"
@@ -303,7 +303,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="62.90" />
+                android:text="62.00" />
 
             <EditText
                 android:id="@+id/q8"
@@ -331,7 +331,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
-                android:text="60.90" />
+                android:text="60.00" />
 
             <EditText
                 android:id="@+id/q9"
@@ -370,6 +370,13 @@
         <TableRow>
             <TextView
                 android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/selectedFood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="" />
