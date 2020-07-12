@@ -60,7 +60,7 @@ class MainPage : AppCompatActivity() {
         }
 
         btnMealOrdering.setOnClickListener{
-            //startActivity(Intent(this,ViewMenu::class.java))
+            startActivity(Intent(this,ViewMenu::class.java))
         }
 
 //        btnRating.setOnClickListener{
