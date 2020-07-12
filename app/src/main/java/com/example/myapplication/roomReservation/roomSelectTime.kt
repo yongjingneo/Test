@@ -1,13 +1,11 @@
-package com.example.myapplication
+package com.example.myapplication.roomReservation
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.example.myapplication.R
-import com.example.myapplication.time
 import kotlinx.android.synthetic.main.activity_room_select_time.*
-import kotlinx.android.synthetic.main.activity_table_select_time.*
 
 lateinit var timeRoom:String
 class roomSelectTime : AppCompatActivity() {

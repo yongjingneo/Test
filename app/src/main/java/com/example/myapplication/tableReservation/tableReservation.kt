@@ -1,8 +1,9 @@
-package com.example.myapplication
+package com.example.myapplication.tableReservation
 
-import android.provider.ContactsContract
+import com.google.firebase.database.Exclude
 
 class tableReservation(
+    @get:Exclude
     val id: String,
     val mail: String,
     val date: String,

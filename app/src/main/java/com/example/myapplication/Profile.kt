@@ -27,6 +27,10 @@ class Profile : AppCompatActivity() {
         btnChgPassword.setOnClickListener {
             startActivity(Intent(this, ChangePassword::class.java))
         }
+
+        btnCheck.setOnClickListener {
+            startActivity(Intent(this, Reservation::class.java))
+        }
     }
 
     private fun displayProfile(){
