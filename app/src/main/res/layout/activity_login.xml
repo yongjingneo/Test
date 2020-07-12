@@ -53,9 +53,9 @@
                 android:id="@+id/btnLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/black"
+                android:background="@color/design_default_color_on_secondary"
                 android:text="Login"
-                android:textColor="@color/common_google_signin_btn_text_dark_default" />
+                android:textColor="@color/design_default_color_background" />
 
             <LinearLayout
                 android:layout_width="match_parent"

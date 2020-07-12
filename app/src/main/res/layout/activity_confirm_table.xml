@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50sp"
         android:text="Room Reservation"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="30sp" />
 
     <TextView
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="Email"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="Date"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="Time"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp" />
 
     <TextView
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="Table size"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp" />
 
     <TextView
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="Table no."
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp" />
 
     <TextView
@@ -101,8 +101,8 @@
         android:id="@+id/btnConfirmTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
+        android:background="@color/design_default_color_on_secondary"
         android:text="Confirm"
-        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+        android:textColor="@color/design_default_color_on_primary" />
 
 </LinearLayout>

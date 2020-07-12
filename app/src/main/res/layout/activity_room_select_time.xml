@@ -15,7 +15,7 @@
         android:layout_marginTop="50sp"
         android:text="Table Reservation"
         android:textAlignment="center"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="30sp" />
 
     <TextView
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30sp"
         android:text="Please select a time"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="20sp" />
 
     <Spinner
@@ -39,8 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
+        android:background="@color/design_default_color_on_secondary"
         android:text="Next"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed" />
+        android:textColor="@color/design_default_color_background" />
 
 </LinearLayout>
