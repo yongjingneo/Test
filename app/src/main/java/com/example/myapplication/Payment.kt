@@ -13,6 +13,7 @@ import android.widget.ListView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.myapplication.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.gson.GsonBuilder
 import com.paypal.android.sdk.payments.PayPalConfiguration
@@ -42,9 +43,13 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
     lateinit var ref: DatabaseReference
     lateinit var listViewData: ListView
 
+    lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
+        auth = FirebaseAuth.getInstance()
+        val email = auth.currentUser?.email
 
         Checkout.preload(applicationContext)
         val gson = GsonBuilder().setLenient()
@@ -92,8 +97,10 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
                 if(p0!!.exists()){
                     for (h in p0.children){
-                        val order = h.getValue(Order::class.java)
-                        orderList.add(order!!)
+                        if(h.getValue(Order::class.java)?.email == email)
+                        {val order = h.getValue(Order::class.java)
+                            orderList.add(order!!)}
+
                     }
 
                     val adapter = OrderAdapter(applicationContext,R.layout.orders,orderList)
