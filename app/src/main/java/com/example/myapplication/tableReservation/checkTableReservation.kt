@@ -16,8 +16,11 @@ class checkTableReservation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_table_reservation)
+
         val actionbar = supportActionBar
         actionbar!!.title="Reservation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         auth = FirebaseAuth.getInstance()
         val mail = auth.currentUser?.email
@@ -47,5 +50,10 @@ class checkTableReservation : AppCompatActivity() {
             }
 
         } )
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

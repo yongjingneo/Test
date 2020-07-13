@@ -16,8 +16,11 @@ class tableSelectDate : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reserve_table)
+
         val actionbar = supportActionBar
         actionbar!!.title="Table Reservation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         val today = Calendar.getInstance().timeInMillis
         calendarTable.minDate = today
@@ -35,6 +38,11 @@ class tableSelectDate : AppCompatActivity() {
             startActivity(Intent(this, tableSelectTime::class.java))
         }
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
 }

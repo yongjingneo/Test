@@ -21,8 +21,11 @@ class confirmTable : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirm_table)
+
         val actionbar = supportActionBar
         actionbar!!.title="Table Reservation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         auth = FirebaseAuth.getInstance()
 
@@ -45,6 +48,11 @@ class confirmTable : AppCompatActivity() {
             }
             saveTableReservation()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun saveTableReservation(){

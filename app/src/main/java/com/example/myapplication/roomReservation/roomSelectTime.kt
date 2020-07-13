@@ -21,6 +21,8 @@ class roomSelectTime : AppCompatActivity() {
 
         val actionbar = supportActionBar
         actionbar!!.title="Room Reservation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         ref = FirebaseDatabase.getInstance().getReference("roomReservations")
 
@@ -82,6 +84,11 @@ class roomSelectTime : AppCompatActivity() {
                 startActivity(Intent(this, confirmRoom::class.java))
             }
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun recordTime(){

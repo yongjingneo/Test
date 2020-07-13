@@ -15,8 +15,11 @@ class Profile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
         val actionbar = supportActionBar
         actionbar!!.title="Profile"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         auth = FirebaseAuth.getInstance()
         displayProfile()
@@ -32,6 +35,11 @@ class Profile : AppCompatActivity() {
         btnCheckTable.setOnClickListener {
             startActivity(Intent(this, checkTableReservation::class.java))
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun displayProfile(){

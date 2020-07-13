@@ -17,8 +17,11 @@ class confirmRoom : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirm_room)
+
         val actionbar = supportActionBar
         actionbar!!.title="Room Reservation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         auth = FirebaseAuth.getInstance()
 
@@ -40,6 +43,11 @@ class confirmRoom : AppCompatActivity() {
             saveRoomReservation()
 
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun saveRoomReservation(){

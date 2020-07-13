@@ -14,8 +14,11 @@ class roomSelectDate : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_room_select_date)
+
         val actionbar = supportActionBar
         actionbar!!.title="Room Reservation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         val today = Calendar.getInstance().timeInMillis
         calendarRoom.minDate = today
@@ -32,5 +35,10 @@ class roomSelectDate : AppCompatActivity() {
         btnNext21.setOnClickListener {
             startActivity(Intent(this, roomSelectTime::class.java))
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

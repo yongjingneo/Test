@@ -19,8 +19,11 @@ class tableSize : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_table_size)
+
         val actionbar = supportActionBar
         actionbar!!.title="Table Reservation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         radioTable1.text = ""
         radioTable2.text = ""
@@ -88,6 +91,11 @@ class tableSize : AppCompatActivity() {
                 startActivity(Intent(this, tableSelectDate::class.java))
             }
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     fun recordTableSize(){

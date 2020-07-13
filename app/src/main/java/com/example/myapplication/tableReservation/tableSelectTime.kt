@@ -22,8 +22,11 @@ class tableSelectTime : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_table_select_time)
+
         val actionbar = supportActionBar
         actionbar!!.title="Table Reservation"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         ref = FirebaseDatabase.getInstance().getReference("tableReservations")
 
@@ -97,6 +100,11 @@ class tableSelectTime : AppCompatActivity() {
                 startActivity(Intent(this, confirmTable::class.java))
             }
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun recordTime(){
