@@ -100,7 +100,7 @@ class MealOrdering : AppCompatActivity() {
 
         totalItem.setText("Total item ordered\t\t\t" + total.toString())
         totalPrice.setText("Total Price\t\t\t" + String.format("%.2f", price).toDouble())
-        selectedFood.setText("Food ordered:\t\t\t" + selected.toString())
+        //selectedFood.setText("Food ordered:\t\t\t" + selected.toString())
 
 
         val totalOrderItem =total.toString()

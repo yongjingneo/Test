@@ -19,7 +19,7 @@ class OrderAdapter (val mCtx: Context, val layoutResId:Int,val orderList: List<O
         val textViewName = view.findViewById<TextView>(R.id.textViewName)
 
         val order = orderList[position]
-        textViewName.text="Ordered Food: "+ order.orderedFood+ "     Order price: "+order.totalPrice
+        textViewName.text="Ordered Food: "+ order.orderedFood+ "\nOrder price: "+order.totalPrice
 
         return view
     }
