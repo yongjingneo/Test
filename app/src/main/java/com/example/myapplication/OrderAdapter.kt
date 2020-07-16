@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import kotlin.math.roundToInt
 
 
 class OrderAdapter (val mCtx: Context, val layoutResId:Int,val orderList: List<Order>)
@@ -19,7 +20,8 @@ class OrderAdapter (val mCtx: Context, val layoutResId:Int,val orderList: List<O
         val textViewName = view.findViewById<TextView>(R.id.textViewName)
 
         val order = orderList[position]
-        textViewName.text="Ordered Food: "+ order.orderedFood+ "     Order price: "+order.totalPrice
+        textViewName.text="Ordered Food: "+ order.orderedFood+ "\nOrder price in RM: "+ order.totalPrice +
+                "\nPayment Amount in ₹: " + ((order.totalPrice.toDouble()/0.057).roundToInt())
 
         return view
     }
