@@ -47,7 +47,7 @@ class Login : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener {
-            if(txtLoginEmail.text.toString().trim() == "yj012999@gmail.com"){
+            if(txtLoginEmail.text.toString().trim() == "yj012999@gmail.com" || txtLoginEmail.text.toString().trim() == "ft7700@gmail.com"){
                 startActivity(Intent(this, adminMainPage::class.java))
             }else{
                 doLogin(it)
