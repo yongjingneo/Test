@@ -141,7 +141,11 @@ class MealOrdering : AppCompatActivity() {
             ref.child(orderId.toString()).setValue(order).addOnCompleteListener {
                 Toast.makeText(applicationContext, "Order saved successfully.", Toast.LENGTH_LONG).show()
             }
-            startActivity(Intent(this, Payment::class.java))
+
+            val intent = Intent (this@MealOrdering,Payment::class.java)
+            //startActivity(Intent(this, Payment::class.java))
+            intent.putExtra("Price",totalOrderPrice)
+            startActivity(intent)
         }
     }
 
