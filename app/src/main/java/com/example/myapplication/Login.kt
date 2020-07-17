@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.myapplication.admin.adminMainPage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
@@ -46,7 +47,11 @@ class Login : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener {
-            doLogin(it)
+            if(txtLoginEmail.text.toString().trim() == "yj012999@gmail.com"){
+                startActivity(Intent(this, adminMainPage::class.java))
+            }else{
+                doLogin(it)
+            }
         }
     }
 

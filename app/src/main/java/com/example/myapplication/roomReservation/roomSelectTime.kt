@@ -4,10 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.get
 import com.example.myapplication.R
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_room_select_time.*
+import kotlinx.android.synthetic.main.activity_table_select_time.*
+import kotlinx.android.synthetic.main.activity_table_size.*
 
 lateinit var timeRoom:String
 
