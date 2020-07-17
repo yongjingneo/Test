@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.app.ActivityCompat
 import com.example.myapplication.R
 import com.google.firebase.auth.FirebaseAuth
@@ -33,6 +30,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.math.BigDecimal
 import java.time.temporal.TemporalAmount
+import kotlin.math.roundToInt
 
 class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
@@ -60,11 +58,26 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
         retroInterface = retrofit.create(RetrofitInterface::class.java)
 
+        var intent = intent
+        val price = intent.getStringExtra("Price")
+        //val priceInr:String = String.format(price.toDouble()/0.057))
+        val priceInr:String = String.format("%.2f", (price.toDouble()/0.057))
+
+
+        val amountEdit: EditText = findViewById(R.id.amountEdit)
+        amountEdit.setText(priceInr.toString().dropLast(3))
+
+
+
 
         findViewById<Button>(R.id.btnRazar).setOnClickListener{
 
+            //val amountEdit: EditText = findViewById(R.id.amountEdit)
             val amountEdit: EditText = findViewById(R.id.amountEdit)
             val amount = amountEdit.text.toString()
+
+//            val txtAmountInr: TextView = findViewById<TextView>(R.id.txtAmountInr)
+//            val amount = price
 
             if(amount.isEmpty()){
                 amountEdit.error = "Please enter an amount"
