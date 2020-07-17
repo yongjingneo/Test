@@ -9,6 +9,7 @@ import com.example.myapplication.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_confirm_room.*
+import kotlinx.android.synthetic.main.activity_table_select_time.*
 
 class confirmRoom : AppCompatActivity() {
 

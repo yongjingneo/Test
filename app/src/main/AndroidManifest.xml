@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".tableReservation.checkTableReservation"></activity>
+        <activity android:name=".admin.AdminMeal"></activity>
+        <activity android:name=".admin.AdminTable" />
+        <activity android:name=".admin.AdminRoom" />
+        <activity android:name=".admin.adminMainPage" />
+        <activity android:name=".admin.adminLogin" />
+        <activity android:name=".tableReservation.checkTableReservation" />
         <activity android:name=".roomReservation.Reservation" />
         <activity android:name=".roomReservation.confirmRoom" />
         <activity android:name=".tableReservation.confirmTable" />
