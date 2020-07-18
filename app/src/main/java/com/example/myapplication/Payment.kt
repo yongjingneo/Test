@@ -118,7 +118,7 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
                     val adapter = OrderAdapter(applicationContext,R.layout.orders,orderList)
                     listViewData.adapter = adapter
-               }
+                }
             }
 
         })
@@ -180,5 +180,5 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
             })
 
-     }
+    }
 }

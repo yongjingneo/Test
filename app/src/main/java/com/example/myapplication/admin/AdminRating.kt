@@ -3,29 +3,27 @@ package com.example.myapplication.admin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
-import com.example.myapplication.Order
-import com.example.myapplication.OrderAdapter
+import com.example.myapplication.*
 import com.example.myapplication.R
 import com.google.firebase.database.*
 
-class AdminMeal : AppCompatActivity() {
+class AdminRating : AppCompatActivity() {
 
-    lateinit var orderList: MutableList<Order>
+    lateinit var reviewList: MutableList<Review>
     lateinit var ref: DatabaseReference
-    lateinit var listViewData: ListView
+    lateinit var listRatingData: ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_admin_meal)
+        setContentView(R.layout.activity_admin_rating)
+        reviewList = mutableListOf()
+        ref = FirebaseDatabase.getInstance().getReference("reviews")
 
-        orderList = mutableListOf()
-        ref = FirebaseDatabase.getInstance().getReference("orders")
 
-
-        listViewData = findViewById(R.id.listMealData)
+        listRatingData = findViewById(R.id.listRatingData)
 
         val actionbar = supportActionBar
-        actionbar!!.title="Meal Orders"
+        actionbar!!.title="Ratings"
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
@@ -38,12 +36,12 @@ class AdminMeal : AppCompatActivity() {
 
                 if(p0!!.exists()){
                     for (h in p0.children){
-                        val order = h.getValue(Order::class.java)
-                            orderList.add(order!!)
+                        val review = h.getValue(Review::class.java)
+                        reviewList.add(review!!)
                     }
 
-                    val adapter = OrderAdapter(applicationContext,R.layout.orders,orderList)
-                    listViewData.adapter = adapter
+                    val adapter = ReviewAdapter(applicationContext,R.layout.rating,reviewList)
+                    listRatingData.adapter = adapter
                 }
             }
 
@@ -55,4 +53,3 @@ class AdminMeal : AppCompatActivity() {
         return true
     }
 }
-
