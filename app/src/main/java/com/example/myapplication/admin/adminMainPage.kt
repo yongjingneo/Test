@@ -24,6 +24,9 @@ class adminMainPage : AppCompatActivity() {
             startActivity(Intent(this, AdminTable::class.java))
         }
 
+        btnAdminRating.setOnClickListener{
+            startActivity(Intent(this,AdminRating::class.java))
+        }
         btnAdminMeal.setOnClickListener {
             startActivity(Intent(this, AdminMeal::class.java))
         }

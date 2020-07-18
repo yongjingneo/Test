@@ -20,8 +20,10 @@ class OrderAdapter (val mCtx: Context, val layoutResId:Int,val orderList: List<O
         val textViewName = view.findViewById<TextView>(R.id.textViewName)
 
         val order = orderList[position]
-        textViewName.text="Ordered Food: "+ order.orderedFood+ "\nOrder price in RM: "+ order.totalPrice +
-                "\nPayment Amount in ₹: " + ((order.totalPrice.toDouble()/0.057).roundToInt())
+        textViewName.text="Customer email: "+ order.email+
+                "\nOrdered Food: "+ order.orderedFood+ "\nOrder price in RM: "+ order.totalPrice +
+                "\nPayment Amount in ₹: " + ((order.totalPrice.toDouble()/0.057).toInt())
+
 
         return view
     }
