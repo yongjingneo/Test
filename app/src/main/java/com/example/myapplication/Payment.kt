@@ -72,12 +72,9 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
         findViewById<Button>(R.id.btnRazar).setOnClickListener{
 
-            //val amountEdit: EditText = findViewById(R.id.amountEdit)
             val amountEdit: EditText = findViewById(R.id.amountEdit)
             val amount = amountEdit.text.toString()
 
-//            val txtAmountInr: TextView = findViewById<TextView>(R.id.txtAmountInr)
-//            val amount = price
 
             if(amount.isEmpty()){
                 amountEdit.error = "Please enter an amount"

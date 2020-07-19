@@ -10,6 +10,13 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_meal_ordering.*
+import android.text.Editable
+import android.widget.Toast
+import android.text.TextWatcher
+import androidx.core.app.ComponentActivity.ExtraData
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class MealOrdering : AppCompatActivity() {
 
@@ -41,8 +48,6 @@ class MealOrdering : AppCompatActivity() {
         var total:Int = 0
         var price:Double = 0.00
         var selected:String = ""
-
-
 
         if(checkBox.isChecked  && q1.text.isNotEmpty()){
             total = total + q1.text.toString().toInt()
