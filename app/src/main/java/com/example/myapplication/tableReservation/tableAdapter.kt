@@ -30,8 +30,8 @@ class tableAdapter(val mCtx: Context, val layoutResId: Int, val tableList:List<t
         txtTableMail.text = table.mail
         txtTableDate.text = table.date
         txtTableTime.text = table.time
-        txtTableSize.text = table.size
-        txtTableNo.text = table.no
+        txtTableSize.text = table.bigTable.toString()
+        txtTableNo.text = table.smallTable.toString()
 
         return view
     }

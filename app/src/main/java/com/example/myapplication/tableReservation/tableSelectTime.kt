@@ -51,34 +51,31 @@ class tableSelectTime : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 if(p0.exists()){
                     for(t in p0.children){
+                        var currentSmall = t.getValue(tableReservation::class.java)!!.smallTable
+                        var currentBig = t.getValue(tableReservation::class.java)!!.bigTable
                         if(t.getValue(tableReservation::class.java)?.date == date &&
                             t.getValue(tableReservation::class.java)?.time == time1 &&
-                            t.getValue(tableReservation::class.java)?.size == size &&
-                            t.getValue(tableReservation::class.java)?.no == no    ){
+                            ((currentSmall + smallTable > 3) || (currentBig + bigTable > 3))){
                             timeOptions.set(1,"")
                         }
                         if(t.getValue(tableReservation::class.java)?.date == date &&
                             t.getValue(tableReservation::class.java)?.time == time2 &&
-                            t.getValue(tableReservation::class.java)?.size == size &&
-                            t.getValue(tableReservation::class.java)?.no == no    ){
+                            ((currentSmall + smallTable > 3) || (currentBig + bigTable > 3))){
                             timeOptions.set(2,"")
                         }
                         if(t.getValue(tableReservation::class.java)?.date == date &&
                             t.getValue(tableReservation::class.java)?.time == time3 &&
-                            t.getValue(tableReservation::class.java)?.size == size &&
-                            t.getValue(tableReservation::class.java)?.no == no    ){
+                            ((currentSmall + smallTable > 3) || (currentBig + bigTable > 3))){
                             timeOptions.set(3,"")
                         }
                         if(t.getValue(tableReservation::class.java)?.date == date &&
                             t.getValue(tableReservation::class.java)?.time == time4 &&
-                            t.getValue(tableReservation::class.java)?.size == size &&
-                            t.getValue(tableReservation::class.java)?.no == no    ){
+                            ((currentSmall + smallTable > 3) || (currentBig + bigTable > 3))){
                             timeOptions.set(4,"")
                         }
                         if(t.getValue(tableReservation::class.java)?.date == date &&
                             t.getValue(tableReservation::class.java)?.time == time5 &&
-                            t.getValue(tableReservation::class.java)?.size == size &&
-                            t.getValue(tableReservation::class.java)?.no == no    ){
+                            ((currentSmall + smallTable > 3) || (currentBig + bigTable > 3))){
                             timeOptions.set(5,"")
                         }
                     }

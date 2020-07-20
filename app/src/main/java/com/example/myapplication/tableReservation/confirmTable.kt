@@ -3,13 +3,11 @@ package com.example.myapplication.tableReservation
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.myapplication.*
 import com.example.myapplication.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_check_table_reservation.*
 import kotlinx.android.synthetic.main.activity_confirm_table.*
 
 
@@ -34,8 +32,8 @@ class confirmTable : AppCompatActivity() {
         txtTmail.text = user
         txtTdate.text = date
         txtTtime.text = time
-        txtTtable.text = size
-        txtTNo.text = no
+        txtTBigtable.text = bigTable.toString()
+        txtTSmalltable.text = smallTable.toString()
 
         btnConfirmTable.setOnClickListener {
             if(editTextTName.text.isEmpty()){
@@ -61,7 +59,7 @@ class confirmTable : AppCompatActivity() {
         val tableId = ref.push().key
 
         val table = tableReservation(tableId!!,txtTmail.text.toString(), editTextTName.text.toString(),editTextTPhoneNo.text.toString(),
-            date,time,size, no)
+            date,time, bigTable, smallTable)
 
         ref.child(tableId).setValue(table).addOnCompleteListener {
             val confirmDialog = AlertDialog.Builder(this)

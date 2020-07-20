@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.example.myapplication.roomReservation.roomSelectDate
+import com.example.myapplication.tableReservation.tableAmount
 import com.example.myapplication.tableReservation.tableSize
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main_page.*
@@ -51,7 +52,7 @@ class MainPage : AppCompatActivity() {
 //        }
 
         btnReserveTable.setOnClickListener {
-            startActivity(Intent(this, tableSize::class.java))
+            startActivity(Intent(this, tableAmount::class.java))
         }
 
         btnReserveRoom.setOnClickListener {
