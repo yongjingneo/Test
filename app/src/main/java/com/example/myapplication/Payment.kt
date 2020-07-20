@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.util.Log
 import android.view.View
 import android.widget.*
@@ -129,6 +130,7 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
             }
 
         })
+
     }
 
 
@@ -183,19 +185,6 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     if(response.body().equals("success")) {
                         Toast.makeText(this@Payment, "Payment success", Toast.LENGTH_LONG).show()
-
-                        //val pendingIntent = PendingIntent.getActivity(this,0,this@Payment)
-                        /*notificationChannel = NotificationChannel(channelId,descrption,NotificationManager.IMPORTANCE_HIGH)
-                        notificationChannel.enableLights(true)
-                        notificationChannel.lightColor= Color.GREEN
-                        notificationChannel.enableVibration(false)
-                        notificationManager.createNotificationChannel(notificationChannel)
-
-                        builder = Notification.Builder(this,channelId)
-                            .setContentTitle("Notification")
-                            .setContentText("Payment is done")
-                            .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                        notificationManager.notify()*/
                     }
 
                 }
