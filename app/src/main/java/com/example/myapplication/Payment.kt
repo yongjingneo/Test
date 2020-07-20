@@ -1,7 +1,9 @@
 package com.example.myapplication
 
-import android.app.Activity
+import android.app.*
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -42,10 +44,18 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
     lateinit var listViewData: ListView
 
     lateinit var auth: FirebaseAuth
+    lateinit var notificationManager: NotificationManager
+    lateinit var notificationChannel: NotificationChannel
+    lateinit var builder: Notification.Builder
+    private val channelId = "com.example.myapplication"
+    private val descrption = "Payment is done"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
+
+        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
         auth = FirebaseAuth.getInstance()
         val email = auth.currentUser?.email
 
@@ -171,8 +181,23 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
                 }
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
-                    if(response.body().equals("success"))
-                        Toast.makeText(this@Payment,"Payment success", Toast.LENGTH_LONG).show()
+                    if(response.body().equals("success")) {
+                        Toast.makeText(this@Payment, "Payment success", Toast.LENGTH_LONG).show()
+
+                        //val pendingIntent = PendingIntent.getActivity(this,0,this@Payment)
+                        /*notificationChannel = NotificationChannel(channelId,descrption,NotificationManager.IMPORTANCE_HIGH)
+                        notificationChannel.enableLights(true)
+                        notificationChannel.lightColor= Color.GREEN
+                        notificationChannel.enableVibration(false)
+                        notificationManager.createNotificationChannel(notificationChannel)
+
+                        builder = Notification.Builder(this,channelId)
+                            .setContentTitle("Notification")
+                            .setContentText("Payment is done")
+                            .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                        notificationManager.notify()*/
+                    }
+
                 }
 
             })
