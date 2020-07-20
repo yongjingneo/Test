@@ -10,10 +10,10 @@ class tableReservation(
     val phoneNo:String,
     val date: String,
     val time: String,
-    val size: String,
-    val no: String
+    val bigTable: Int,
+    val smallTable: Int
 ) {
-    constructor():this("","","","","","","",""){
+    constructor():this("","","","","","",0,0){
 
     }
 }

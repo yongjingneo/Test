@@ -136,7 +136,7 @@
             android:layout_width="10sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Table Size"
+            android:text="Big Table"
             android:textSize="18sp" />
 
         <TextView
@@ -159,7 +159,7 @@
             android:layout_width="10sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Table No."
+            android:text="Small table"
             android:textSize="18sp" />
 
         <TextView

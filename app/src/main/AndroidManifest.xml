@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".admin.AdminMeal"></activity>
+        <activity android:name=".tableReservation.tableAmount"></activity>
+        <activity android:name=".admin.AdminMeal" />
         <activity android:name=".admin.AdminTable" />
         <activity android:name=".admin.AdminRoom" />
         <activity android:name=".admin.adminMainPage" />

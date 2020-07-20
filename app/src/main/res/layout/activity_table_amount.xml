@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:paddingLeft="60dp"
+    android:paddingTop="30dp"
+    android:paddingRight="60dp"
+    tools:context=".tableReservation.tableAmount">
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Table Reservation"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="How many people?"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editTextPeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Range: 1 - 42"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Big Table: 10 seats"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Small Table - 4 seats"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="big table"
+            android:textColor="@color/common_google_signin_btn_text_light_default"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="small table"
+            android:textColor="@color/common_google_signin_btn_text_light_default"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/common_google_signin_btn_text_dark_focused"
+        android:text="Confirm"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+</LinearLayout>
