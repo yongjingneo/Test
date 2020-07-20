@@ -89,8 +89,10 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
                 android:layout_weight="20"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="1"/>
         </TableRow>
 
         <TableRow
@@ -117,6 +119,8 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
+                android:maxLength="1"
                 android:layout_weight="20"
                 android:inputType="number" />
         </TableRow>
@@ -146,6 +150,8 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
+                android:maxLength="1"
                 android:layout_weight="20"
                 android:inputType="number" />
         </TableRow>
@@ -187,6 +193,8 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
+                android:maxLength="1"
                 android:layout_weight="20"
                 android:inputType="number" />
         </TableRow>
@@ -215,6 +223,8 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
+                android:maxLength="1"
                 android:layout_weight="20"
                 android:inputType="number" />
         </TableRow>
@@ -254,6 +264,8 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
+                android:maxLength="1"
                 android:layout_weight="20"
                 android:inputType="number" />
         </TableRow>
@@ -282,6 +294,8 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
+                android:maxLength="1"
                 android:layout_weight="20"
                 android:inputType="number" />
         </TableRow>
@@ -310,6 +324,8 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
+                android:maxLength="1"
                 android:layout_weight="20"
                 android:inputType="number" />
         </TableRow>
@@ -338,6 +354,8 @@
                 android:layout_width="124dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:digits="123456789"
+                android:maxLength="1"
                 android:layout_weight="20"
                 android:inputType="number" />
         </TableRow>
@@ -348,6 +366,7 @@
             android:layout_width="10dp"
             android:layout_height="40dp"
             android:ems="10"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
             android:layout_marginRight="470px"
             android:hint="Customer Name"
             android:inputType="textPersonName" />
@@ -374,13 +393,13 @@
                 android:layout_height="wrap_content"
                 android:text="" />
         </TableRow>
-        <TableRow>
-            <TextView
-                android:id="@+id/selectedFood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />
-        </TableRow>
+<!--        <TableRow>-->
+<!--            <TextView-->
+<!--                android:id="@+id/selectedFood"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="" />-->
+<!--        </TableRow>-->
     </TableLayout>
 
 

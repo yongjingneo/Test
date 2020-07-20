@@ -13,6 +13,9 @@ class adminMainPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_main_page)
 
+        val actionbar = supportActionBar
+        actionbar!!.title="Admin Page"
+
         btnAdminRoom.setOnClickListener {
             startActivity(Intent(this, AdminRoom::class.java))
         }
@@ -21,8 +24,11 @@ class adminMainPage : AppCompatActivity() {
             startActivity(Intent(this, AdminTable::class.java))
         }
 
+        btnAdminRating.setOnClickListener{
+            startActivity(Intent(this,AdminRating::class.java))
+        }
         btnAdminMeal.setOnClickListener {
-
+            startActivity(Intent(this, AdminMeal::class.java))
         }
 
         btnAdminLogout.setOnClickListener {

@@ -7,12 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.app.ActivityCompat
 import com.example.myapplication.R
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.gson.GsonBuilder
 import com.paypal.android.sdk.payments.PayPalConfiguration
@@ -32,6 +30,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.math.BigDecimal
 import java.time.temporal.TemporalAmount
+import kotlin.math.roundToInt
 
 class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
@@ -42,9 +41,13 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
     lateinit var ref: DatabaseReference
     lateinit var listViewData: ListView
 
+    lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
+        auth = FirebaseAuth.getInstance()
+        val email = auth.currentUser?.email
 
         Checkout.preload(applicationContext)
         val gson = GsonBuilder().setLenient()
@@ -55,11 +58,23 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
         retroInterface = retrofit.create(RetrofitInterface::class.java)
 
+        var intent = intent
+        val price = intent.getStringExtra("Price")
+        //val priceInr:String = String.format(price.toDouble()/0.057))
+        val priceInr:String = String.format("%.2f", (price.toDouble()/0.057))
+
+
+        val amountEdit: EditText = findViewById(R.id.amountEdit)
+        amountEdit.setText(priceInr.toString().dropLast(3))
+
+
+
 
         findViewById<Button>(R.id.btnRazar).setOnClickListener{
 
             val amountEdit: EditText = findViewById(R.id.amountEdit)
             val amount = amountEdit.text.toString()
+
 
             if(amount.isEmpty()){
                 amountEdit.error = "Please enter an amount"
@@ -92,13 +107,15 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
                 if(p0!!.exists()){
                     for (h in p0.children){
-                        val order = h.getValue(Order::class.java)
-                        orderList.add(order!!)
+                        if(h.getValue(Order::class.java)?.email == email)
+                        {val order = h.getValue(Order::class.java)
+                            orderList.add(order!!)}
+
                     }
 
                     val adapter = OrderAdapter(applicationContext,R.layout.orders,orderList)
                     listViewData.adapter = adapter
-               }
+                }
             }
 
         })
@@ -160,5 +177,5 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
 
             })
 
-     }
+    }
 }
