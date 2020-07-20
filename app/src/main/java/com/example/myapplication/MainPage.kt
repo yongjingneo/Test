@@ -31,7 +31,6 @@ class MainPage : AppCompatActivity() {
                 R.id.myItem2 -> startActivity(Intent(this,ViewMenu::class.java))
                 R.id.myItem3 -> startActivity(Intent(this, roomSelectDate::class.java))
                 R.id.myItem4 -> startActivity(Intent(this, tableSize::class.java))
-                R.id.myItem5 -> startActivity(Intent(this, Payment::class.java))
                 R.id.myItem6 -> startActivity(Intent(this@MainPage,Rating::class.java))
             }
             true

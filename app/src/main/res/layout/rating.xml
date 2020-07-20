@@ -4,10 +4,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewName"
-        android:textStyle="bold"
+        android:id="@+id/textViewRating"
         android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
+
 </LinearLayout>

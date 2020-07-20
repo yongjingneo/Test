@@ -18,10 +18,6 @@
         android:icon="@drawable/ic_table"
         android:title="Reserve Table"/>
     <item
-        android:id="@+id/myItem5"
-        android:icon="@drawable/ic_payment"
-        android:title="Payment"/>
-    <item
         android:id="@+id/myItem6"
         android:icon="@drawable/ic_feedback"
         android:title="Rating"/>
