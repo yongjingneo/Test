@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.example.myapplication.R
 import com.example.myapplication.roomReservation.roomAdapter
 import com.example.myapplication.roomReservation.roomReservation
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_admin_room.*
 
