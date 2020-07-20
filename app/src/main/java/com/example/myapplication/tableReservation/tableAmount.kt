@@ -51,6 +51,9 @@ class tableAmount : AppCompatActivity() {
         })
 
         button.setOnClickListener {
+            if(textView42.text.toString() == "0" && textView43.text.toString() == "0"){
+                return@setOnClickListener
+            }
             bigTable = textView42.text.toString().toInt()
             smallTable = textView43.text.toString().toInt()
             startActivity(Intent(this, tableSelectDate::class.java))
