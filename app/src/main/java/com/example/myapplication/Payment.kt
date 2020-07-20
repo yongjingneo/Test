@@ -1,10 +1,13 @@
 package com.example.myapplication
 
-import android.app.Activity
+import android.app.*
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.util.Log
 import android.view.View
 import android.widget.*
@@ -42,10 +45,18 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
     lateinit var listViewData: ListView
 
     lateinit var auth: FirebaseAuth
+    lateinit var notificationManager: NotificationManager
+    lateinit var notificationChannel: NotificationChannel
+    lateinit var builder: Notification.Builder
+    private val channelId = "com.example.myapplication"
+    private val descrption = "Payment is done"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
+
+        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
         auth = FirebaseAuth.getInstance()
         val email = auth.currentUser?.email
 
@@ -119,6 +130,7 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
             }
 
         })
+
     }
 
 
@@ -171,8 +183,10 @@ class Payment : AppCompatActivity(), PaymentResultWithDataListener {
                 }
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
-                    if(response.body().equals("success"))
-                        Toast.makeText(this@Payment,"Payment success", Toast.LENGTH_LONG).show()
+                    if(response.body().equals("success")) {
+                        Toast.makeText(this@Payment, "Payment success", Toast.LENGTH_LONG).show()
+                    }
+
                 }
 
             })
