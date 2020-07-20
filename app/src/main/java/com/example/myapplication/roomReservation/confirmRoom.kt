@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.myapplication.MainPage
+import com.example.myapplication.MealOrdering
 import com.example.myapplication.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -62,7 +63,11 @@ class confirmRoom : AppCompatActivity() {
             val confirmDialog = AlertDialog.Builder(this)
             confirmDialog.setTitle("Reservation success")
             confirmDialog.setMessage("Your reservation is successfully made.")
-            confirmDialog.setPositiveButton("OK",{ _, _ ->
+            confirmDialog.setPositiveButton("Yes",{ _, _ ->
+                startActivity(Intent(this, MealOrdering::class.java))
+                finish()
+            })
+            confirmDialog.setNegativeButton("No",{_,_->
                 startActivity(Intent(this, MainPage::class.java))
                 finish()
             })
