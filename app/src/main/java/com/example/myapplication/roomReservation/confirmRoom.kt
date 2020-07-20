@@ -63,11 +63,7 @@ class confirmRoom : AppCompatActivity() {
             val confirmDialog = AlertDialog.Builder(this)
             confirmDialog.setTitle("Reservation success")
             confirmDialog.setMessage("Your reservation is successfully made.")
-            confirmDialog.setPositiveButton("Yes",{ _, _ ->
-                startActivity(Intent(this, MealOrdering::class.java))
-                finish()
-            })
-            confirmDialog.setNegativeButton("No",{_,_->
+            confirmDialog.setPositiveButton("OK",{_,_->
                 startActivity(Intent(this, MainPage::class.java))
                 finish()
             })
